@@ -6,10 +6,10 @@ const assertEqual = (actual, expected) => {
   }
 };
 
+const tail = (array) => {
+  return array.slice(1);
+};
 
-// test code
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual("AL", "AL");
-assertEqual("ABC", "DEF");
-assertEqual(2, 3);
+const words = ["Yo Yo", "Lighthouse", "Labs"];
+tail(words);
+assertEqual(words.length, 3);
