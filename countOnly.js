@@ -10,13 +10,16 @@ const countOnly = (allItems, itemsToCount) => {
   // 1. figure out how many Jasons are in the allItems list
   // 2. count everything in the allItems list
     // 2a. add them to the empty object called results if not already in the object
-  
+  // 3. only count what matters (the ones that are in the itemsToCount object)
     let results = {};
   for (const item of allItems) {
-    if (results[item]) {
-      results[item] += 1;
-    } else {
-      results[item] = 1;
+    if (itemsToCount[item]) {
+      if (results[item]) {
+        results[item] += 1;
+      } else {
+        results[item] = 1;
+      }
+
     }
   }
   return results;
