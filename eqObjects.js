@@ -7,12 +7,18 @@ const assertEqual = (actual, expected) => {
 };
 const eqArrays = (arr1, arr2) => {
   let matchCount = 0;
+  let longestArrLength;
+  if(arr1.length > arr2.length) {
+    longestArrLength = arr1.length;
+  } else {
+    longestArrLength = arr2.length;
+  }
   for (let index in arr1) {
     if (arr1[index] === arr2[index]) {
       matchCount++;
     }
   }
-  if (matchCount === arr1.length) {
+  if (matchCount === longestArrLength) {
     return true;
   } else {
     return false;
@@ -31,9 +37,16 @@ const eqObjects = (obj1, obj2) => {
     let count = 0;
     for (const key1 in obj1) {
       for (const key2 in obj2) {
-        if (key1 === key2 && obj1[key1] === obj2[key2]) {
-          count++;
-          console.log(count);
+        let val1 = obj1[key1];
+        let val2 = obj2[key2];
+        if (Array.isArray(val1) && Array.isArray(val2)) {
+          if(key1 === key2 && eqArrays(val1, val2)) {
+            count++;
+          }
+        } else {
+          if (key1 === key2 && val1 === val2) {
+            count++;
+          }
         }
       }
     }
@@ -62,8 +75,8 @@ const eqObjects = (obj1, obj2) => {
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 assertEqual(eqObjects(cd, dc), true);
-eqObjects(cd, dc); // => true
+// eqObjects(cd, dc); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertEqual(eqObjects(cd, cd2), false);
-eqObjects(cd, cd2); // => false
+// eqObjects(cd, cd2); // => false
