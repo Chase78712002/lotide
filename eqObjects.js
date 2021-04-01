@@ -5,6 +5,19 @@ const assertEqual = (actual, expected) => {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
+const eqArrays = (arr1, arr2) => {
+  let matchCount = 0;
+  for (let index in arr1) {
+    if (arr1[index] === arr2[index]) {
+      matchCount++;
+    }
+  }
+  if (matchCount === arr1.length) {
+    return true;
+  } else {
+    return false;
+  }
+};
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
 const eqObjects = (obj1, obj2) => {
@@ -20,6 +33,7 @@ const eqObjects = (obj1, obj2) => {
       for (const key2 in obj2) {
         if (key1 === key2 && obj1[key1] === obj2[key2]) {
           count++;
+          console.log(count);
         }
       }
     }
