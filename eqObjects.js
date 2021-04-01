@@ -14,9 +14,9 @@ const eqObjects = (obj1, obj2) => {
 // Test prmitives as values
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
-assertEqual(eqObjects(ab, ba), true);
+assertEqual(ab, ba);
 eqObjects(ab, ba); // => true
 
 const abc = { a: "1", b: "2", c: "3" };
-assertEqual(eqObjects(ab, abc), false);
+assertEqual(ab, abc);
 eqObjects(ab, abc); // => false
