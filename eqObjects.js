@@ -10,3 +10,13 @@ const assertEqual = (actual, expected) => {
 const eqObjects = (obj1, obj2) => {
   // return true/false
 }
+
+// Test prmitives as values
+const ab = { a: "1", b: "2" };
+const ba = { b: "2", a: "1" };
+assertEqual(eqObjects(ab, ba), true);
+eqObjects(ab, ba); // => true
+
+const abc = { a: "1", b: "2", c: "3" };
+assertEqual(eqObjects(ab, abc), false);
+eqObjects(ab, abc); // => false
