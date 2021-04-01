@@ -8,7 +8,12 @@ const assertEqual = (actual, expected) => {
 
 const findKeyByValue = (obj, val) => {
   // scan obj
-  // return first key for the given val
+  for (key in obj) {
+    // return first key for the given val
+    if (obj[key] === val) {
+      return key;
+    }
+  }
   // if no key found,
     // return undefined
 }
