@@ -7,5 +7,6 @@ const assertEqual = (actual, expected) => {
 };
 const countLetters = (sentence) => {
   // return a count for each letter in the sentence
-
+    // the counts for each letter should return as an object with each letter as the key, and occurence as the value
+  
 }
