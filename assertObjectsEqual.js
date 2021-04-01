@@ -1,3 +1,22 @@
+const eqArrays = (arr1, arr2) => {
+  let matchCount = 0;
+  let longestArrLength;
+  if(arr1.length > arr2.length) {
+    longestArrLength = arr1.length;
+  } else {
+    longestArrLength = arr2.length;
+  }
+  for (let index in arr1) {
+    if (arr1[index] === arr2[index]) {
+      matchCount++;
+    }
+  }
+  if (matchCount === longestArrLength) {
+    return true;
+  } else {
+    return false;
+  }
+};
 const eqObjects = (obj1, obj2) => {
   // check if they have the same number of keys
   numKeysObj1 = Object.keys(obj1).length;
@@ -36,12 +55,15 @@ const eqObjects = (obj1, obj2) => {
 const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect; // <= add this line
   if (eqObjects(actual, expected)) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+    console.log(`✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
   } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+    console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
   }
   // console.log appropriate message to the console
-  console.log(`Example label: ${inspect(actual)}`);
 };
 
 assertObjectsEqual({ a: '1', b: 2 },{ b: 2, a: '1' });
+
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+assertObjectsEqual(cd,dc);
