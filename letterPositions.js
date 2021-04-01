@@ -28,12 +28,14 @@ const letterPositions = (sentence) => {
     let letter = sentence[i];
     let index = i;
     // if letter exists in the result obj
-      // push current index to result[letter];
-    if (results[letter]) {
-      results[letter].push(index);
-    } else {
-      // otherwise create the result[letter] as key with current index as array for value
-      results[letter] = [index];
+    // push current index to result[letter];
+    if (letter !== " ") {
+      if (results[letter]) {
+        results[letter].push(index);
+      } else {
+        // otherwise create the result[letter] as key with current index as array for value
+        results[letter] = [index];
+      }
     }
   }
   // value needs to be the index positions of that letter, and should be an array
@@ -41,6 +43,7 @@ const letterPositions = (sentence) => {
   return results;
 };
 console.log(letterPositions("hello"));
+console.log(letterPositions("lighthouse in the house"));
 /*
 results for "hello"
 {
@@ -67,4 +70,5 @@ results for "hello"
 */
 // test with small string
 assertArraysEqual(letterPositions("hello").e, [1]);
-assertArraysEqual(letterPositions('hello'), {h:[0], e:[1], l:[2,3], o:[4]});
+assertArraysEqual(letterPositions("lighthouse in the house").h, [3, 5, 15, 18]);
+assertArraysEqual(letterPositions('hello'), { h: [0], e: [1], l: [2, 3], o: [4] });
