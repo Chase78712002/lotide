@@ -16,14 +16,17 @@ const countLetters = (sentence) => {
       //3a. set each key's value as 1 first, return the output
   // 4. if key exists increment the count
         // else create the key value pair in the output with value as 1;
+  // 5. remove the space count
   for (const char of sentence) {
-    if (output[char]) {
-      output[char] += 1;
-    } else {
-      output[char] = 1;
+    if (char !== " ") {
+      if (output[char]) {
+        output[char] += 1;
+      } else {
+        output[char] = 1;
+      }
     }
   }
   return output;
 }
 
-console.log(countLetters('Lighthouse'));
+console.log(countLetters('Lighthouse in the house'));
