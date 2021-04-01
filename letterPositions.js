@@ -26,8 +26,16 @@ const letterPositions = (sentence) => {
   // access the letter's index position number and the letter itself
 
   for (let i = 0; i < sentence.length; i++) {
-    console.log(sentence[i]);
-    console.log(i);
+    let letter = sentence[i];
+    let index = i;
+    // if letter exists in the result obj
+      // push current index to result[letter];
+    if (results[letter]) {
+      results[letter].push(index);
+    } else {
+      // otherwise create the result[letter] as key with current index as array for value
+      results[letter] = [index];
+    }
   }
   // value needs to be the index positions of that letter, and should be an array
   //
