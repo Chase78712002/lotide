@@ -22,10 +22,27 @@ const assertArraysEqual = (actual, expected) => {
 
 const letterPositions = (sentence) => {
   const results = {};
-  // update results
+  // loop through the string and create key:value pair for each letter 
+  // access the letter's index position number and the letter itself
+
+  for (let i = 0; i < sentence.length; i++) {
+    console.log(sentence[i]);
+    console.log(i);
+  }
+  // value needs to be the index positions of that letter, and should be an array
+  //
   return results;
 };
-
+console.log(letterPositions("hello"));
+/*
+results for "hello"
+{
+  h:[0],
+  e:[1],
+  l:[2,3], 
+  o:[4]
+}
+*/
 // resulting obj should look like this ("lighthouse in the house") as arguement:
 /* 
 {
@@ -42,5 +59,5 @@ const letterPositions = (sentence) => {
 }
 */
 // test with small string
-assertArraysEqual(letterPositions("hello").e, [1]);
-assertArraysEqual(letterPositions('hello'), {h:[0], e:[1], l:[2,3], o:[4]});
+// assertArraysEqual(letterPositions("hello").e, [1]);
+// assertArraysEqual(letterPositions('hello'), {h:[0], e:[1], l:[2,3], o:[4]});
