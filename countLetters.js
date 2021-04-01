@@ -14,9 +14,14 @@ const countLetters = (sentence) => {
   let output = {};
   // 3. add each letter as a key in the output object
       //3a. set each key's value as 1 first, return the output
-      
+  // 4. if key exists increment the count
+        // else create the key value pair in the output with value as 1;
   for (const char of sentence) {
-    output[char] = 1;
+    if (output[char]) {
+      output[char] += 1;
+    } else {
+      output[char] = 1;
+    }
   }
   return output;
 }
