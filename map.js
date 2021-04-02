@@ -1,7 +1,7 @@
 const eqArrays = (arr1, arr2) => {
   let matchCount = 0;
   let longestArrLength;
-  if(arr1.length > arr2.length) {
+  if (arr1.length > arr2.length) {
     longestArrLength = arr1.length;
   } else {
     longestArrLength = arr2.length;
@@ -39,7 +39,12 @@ const map = (array, callback) => {
 };
 
 const words = ["ground", "control", "to", "major", "tom"];
+const strings = ['the', 'second', 'letter', 'of', 'the', 'word', 'will', 'be', 'printed'];
 
 const results1 = map(words, word => word[0]);
-console.log(results1);
+const results2 = map(['Spring', 'Interval', 'Training'], word => word[0]);
+const results3 = map(strings, word => word[1]);
 
+assertArraysEqual(results1, ['g', 'c', 't', 'm', 't']);
+assertArraysEqual(results2, ['S', 'I', 'T']);
+assertArraysEqual(results3, ['h','e','e','f','h','o','i','e','r']);
