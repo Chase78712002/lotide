@@ -1,5 +1,11 @@
 const takeUntil = function(array, callback) {
-  // code
+  // declare an empty result array
+  // loop through the array
+    // push current item to the result array
+    // unless callback returns true
+  // loop end
+  
+  // return a result array
 }
 
 
