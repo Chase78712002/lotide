@@ -19,6 +19,8 @@ const findKey = (obj, callback) => {
     // return undefined
 }
 
+module.exports = findKey;
+
 assertEqual(findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },

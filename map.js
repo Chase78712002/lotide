@@ -38,6 +38,8 @@ const map = (array, callback) => {
   return newArray;
 };
 
+module.exports = map;
+
 const words = ["ground", "control", "to", "major", "tom"];
 const strings = ['the', 'second', 'letter', 'of', 'the', 'word', 'will', 'be', 'printed'];
 

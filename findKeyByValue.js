@@ -18,6 +18,8 @@ const findKeyByValue = (obj, val) => {
     // return undefined
 }
 
+module.exports = findKeyByValue;
+
 
 // test with assertEqual
 
